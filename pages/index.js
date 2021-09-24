@@ -1,12 +1,10 @@
-import React, { useRef } from "react";
-import "keen-slider/keen-slider.min.css";
-import { useKeenSlider } from "keen-slider/react";
+import { useEffect, useState, useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Slider from "../components/Slider";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
-  const [sliderRef, slider] = useKeenSlider();
   return (
     <div className={styles.container}>
       <Head>
@@ -17,14 +15,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h3>Hello World</h3>
-        <div ref={sliderRef} className="keen-slider">
-          <div className="keen-slider__slide number-slide1">1</div>
-          <div className="keen-slider__slide number-slide2">2</div>
-          <div className="keen-slider__slide number-slide3">3</div>
-          <div className="keen-slider__slide number-slide4">4</div>
-          <div className="keen-slider__slide number-slide5">5</div>
-          <div className="keen-slider__slide number-slide6">6</div>
-        </div>
+        <Slider />
       </main>
     </div>
   );
